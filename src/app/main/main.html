@@ -1,0 +1,108 @@
+
+<section class="main" data-ng-class="[main.SharedData.viewState, main.SharedData.gridState]">
+    <career-portal-modal data-ng-show="main.SharedData.modalState === 'open'"></career-portal-modal>
+<section class="logo">
+      <div class="yoh-logo">
+        <img src="assets/images/Yoh-Tagless-White.png"> 
+          <div class="sc2">
+            <div class="long-text" >
+
+            <span class="phrase">
+              <p>Welcome to the Yoh Career Search Portal. Less searching; more finding. 
+              We’re waiting to connect you with a great career.Enter your search terms on the left and let's get started</p>
+             
+              
+            </span>  </div>
+              <div class="cell-wrapper">
+               
+                                      <!--  <div class="btn-group" data-toggle="buttons">
+                                        <div class="links">
+                                           <label class="btn btn-primary" ng-model="SharedData.CareerResources" btn-checkbox>
+                                           <a ng-href="http://www.yoh.com/career-insights">CAREER RESOURCES</a>
+                                            </label>
+                                                 <label class="btn btn-primary" ng-model="SharedData.Diversity" btn-checkbox>
+                                           <a  ng-href="http://www.yoh.com/about#Diversity">DIVERSITY</a></label>
+                                            <label class="btn btn-primary" ng-model="SharedData.About" btn-checkbox>
+                                           <a ng-href="http://www.yoh.com/about">ABOUT</a>
+                                            </label>
+                                            </div>
+                                                  </div>-->
+    
+
+
+                          <div id="socialMedia">
+               
+                              <a ng-href="https://twitter.com/YohCorporate" target="_blank">
+                               <img src="assets/images/Twitter-White.png" alt="Twitter" width="30px" height="30px"></a> 
+                              <a   ng-href="http://www.linkedin.com/groups?gid=78137" target="_blank">
+                                <img src="assets/images/LinkedIn-Whitepsd.png" alt="LinkedIn" width="30px" height="30px"></a>
+                              <a ng-href="https://www.facebook.com/yohjobs?ref=br_tf" target="_blank">
+                                <img src="assets/images/Facebook-White.png" alt="Facebook" width="30px" height="30px"></a> 
+                              <a ng-href="http://www.youtube.com/user/yohtube" target="_blank">
+                                <img src="assets/images/YouTube-White.png" alt="YouTube" width="30px" height="30px"></a>
+                           </div>
+
+                           <div class="small-phrase">
+                             <p> welcome to yoh Careerportal</p>
+                           </div> 
+                           <div class="btn-group" data-toggle="buttons">
+                                        <div class="links">
+                                          
+                                           <a ng-href="http://www.yoh.com/career-insights">CAREER RESOURCES</a>
+                                            
+                                                
+                                           <a  ng-href="http://www.yoh.com/about#Diversity">DIVERSITY</a>
+                                           
+                                           <a ng-href="http://www.yoh.com/about">ABOUT</a>
+                                            
+                                            </div>
+                                                  </div>          
+                </span>
+              </div> 
+
+          
+            <!--<span class="phrase">
+              <p>Welcome to the Yoh Career Search Portal. Less searching; more finding. We’re waiting to connect you with a great career.</br></p>
+             
+              
+            </span>  -->                            
+
+          </div>
+       </div> 
+    </div>
+
+        
+            
+             
+    </section>
+<section class="dropmenu">  
+      
+          <div resizable class="sc3">
+            <div class="bt1" ng-click="main.SharedData.isCollapsed = !main.SharedData.isCollapsed;">
+            
+            <span><i class="navicon">MENU ▼</i></span>
+            </div>
+            <div class="well" ng-show="main.SharedData.isCollapsed">
+              <div class="well well-lg" style="border-radius:0px;margin-bottom:1px;padding:10px"><a ng-href="http://www.yoh.com/career-insights">CAREER RESOURCES</a></div>
+              <div class="well well-lg" style="border-radius:0px;margin-bottom:1px;padding:10px"> <a  ng-href="http://www.yoh.com/about#Diversity">DIVERSITY</a></div>
+              <div class="well well-lg" style="border-radius:0px;margin-bottom:1px;padding:10px"> <a ng-href="http://www.yoh.com/about">ABOUT</a></div>
+             
+            </div>  
+            
+          </div> 
+ </section>
+<section class="portal">
+    <div class="portal-canvas">
+        <career-portal-sidebar></career-portal-sidebar>
+
+        <section class="main">
+            <career-portal-header></career-portal-header>
+            <section class="fade" data-ui-view></section>
+            <div id="mask" class="mask" data-ng-click="main.closeFilters();"></div>
+        </section>
+
+    </div>
+</section>
+
+</section>
+ 

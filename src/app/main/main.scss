@@ -1,0 +1,251 @@
+section.main {
+    
+    > section.logo {
+        width:100%;
+        height:140px;
+        background-color:#AB1E2C;
+        @include desktop(){
+        height:90px;
+        }
+        > .yoh-logo {
+            text-align:center;
+            padding-left:5px;
+            width:100%;
+            height:50px;
+            img{
+            width:120px;
+            height:65px;
+            margin-top:8px;
+             @include desktop(){
+             width:130px;
+             height:70px;
+             margin-top:10px;
+             }
+            }
+            
+            @include desktop(){
+                text-align:left;
+                width:14%; 
+                float:bottom;
+
+            }
+            > .sc2 {
+            width:100%;
+            height:40px;
+            position:relative;
+            top:-5px;
+
+
+
+                @include desktop() {
+                    position:absolute;
+                    top:0;
+                    right:0;
+                    width:86%;
+                    height:90px;
+                    text-align:right;
+                    
+                   
+                }
+
+                    > .cell-wrapper{
+                        height:45px;
+                        width:100%;
+                        
+                        text-align:center;
+                         .btn-group{  
+                            @include desktop() {
+                            
+                            height:90px; 
+                            float:right;
+
+                            }  
+
+                          .links{
+                              @include desktop(){
+                                 padding-top:15px;
+                                 text-align:right;
+                                }
+
+                              a{
+                                @include desktop(){
+                                  color:white;
+                                  padding-right:5px;
+                                  padding-left:5px;
+                                  font-size:15px;
+                                   font-weight:bold;
+                                }
+                              
+                               } 
+                            }
+                            @media only screen and (max-width: 768px) {   
+                                display:none;  
+                            }           
+                            
+                        }
+
+
+                    } 
+                   #socialMedia{
+                    text-align:center;
+                      height:45px;
+                      img{
+                        width:30px;
+                        height:30px;
+                        @include desktop(){
+                            width:30px;
+                            height:30px;
+                            text-align:right;
+                        }
+
+                        
+
+
+                      }
+
+                        @include desktop() {
+                            text-align:right;
+                            height:45px;
+                            padding-right:15px;
+                            padding-top:3px;
+                        }      
+                    }  
+
+                    .small-phrase{
+                     
+                      color:white;
+                       @include desktop(){
+                         display:none;
+                        }
+                    }
+            
+                   
+                > .long-text{
+                     
+                  
+                    .phrase{
+                        @include desktop() {
+                             color:black;
+                             text-align:left;
+                              padding-top:18px;
+                              width:50%;
+                              float:left;
+                              font-size:smaller;
+                              color:#08262C;
+                        }
+                         @media only screen and (max-width: 768px) {   
+                                display:none;  
+                        }
+                    } 
+                       
+                    
+                } 
+            }
+        }
+    }
+ }  
+ section.portal {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+
+    height: 100%;
+    width: 100%;
+
+    > .portal-canvas {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: .3s ease all;
+        backface-visibility: hidden;
+
+        &.show-nav {
+            transform: translateX(10%);
+            transform: translateZ(0) translateX(10%);
+            transform: translate3d(80%, 0, 0);
+
+            @include tablet() {
+                transform: translateX($sidebar-width);
+                transform: translateZ(0) translateX($sidebar-width);
+                transform: translate3d($sidebar-width, 0, 0);
+            }
+        }
+
+        > section.main {
+            height: 100%;
+            transition: padding-left 0.2s ease-in-out;
+
+            @include desktop() {
+                padding-left: $sidebar-width;
+
+                .overview-open & {
+                    padding-left: $sidebar-width-small;
+                }
+            }
+
+            > section.fade {
+                height: calc(100% - #{$header-height});
+                overflow: auto;
+            }
+        }
+    }
+}
+
+ section.dropmenu {
+   background-color:#AB1E2C;
+    @include desktop() {
+        display: none;
+     }
+        .bt1{
+           display: block;
+           position:relative;
+           padding:.5em;
+           background-color: #ddd;
+           ;border-bottom:1px solid rgba(0,0,0,0.2);
+           height:48px;
+           @include desktop() {
+             display: none;
+            } 
+            span{
+                position:absolute;
+                z-index:999;
+                top:0;
+                left:43%;
+                width:85px;
+                height:48px;
+                display:inline-block;
+                background:rgba(0,0,0,0.075);
+                text-align:center;
+               @include desktop(){
+                  display:none;
+                }
+                i.navicon{
+                  position:relative;
+                  top:1.4em;
+                  font-size:12px;
+                  color:#666
+
+                }
+            }
+        }
+        >well{
+        .well well-lg{
+        border-radius:0px;
+        margin-bottom:1px;
+        padding:10px;
+        }
+        }
+
+        .bt2{
+           text-align:center;
+
+          @include desktop(){
+                 display:none;
+            }
+            
+        }
+    
+
+  }
