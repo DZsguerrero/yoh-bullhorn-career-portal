@@ -1,4 +1,4 @@
-# Bullhorn Career Portal
+# D&Z-Bullhorn Career Portal
 
 [![Build Status](https://travis-ci.org/bullhorn/career-portal.svg)](https://travis-ci.org/bullhorn/career-portal)
 [![Dependency Status](https://gemnasium.com/bullhorn/career-portal.svg)](https://gemnasium.com/bullhorn/career-portal)
