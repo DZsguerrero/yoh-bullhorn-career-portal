@@ -28,7 +28,7 @@ There are many ways to **[contribute](https://github.com/bullhorn/career-portal/
 
 ## Building
 
-In order to build Bullhorn Career Portal, ensure that you have **[Git](http://git-scm.com/downloads)** and **[Node.js](http://nodejs.org)** installed.
+In order to build D&Z Bullhorn Career Portal, ensure that you have **[Git](http://git-scm.com/downloads)** and **[Node.js](http://nodejs.org)** installed.
 
 Clone a copy of the repo:
 
