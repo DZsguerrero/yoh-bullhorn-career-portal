@@ -1,14 +1,11 @@
 header.app {
     height: $header-height;
     min-height: $header-height;
-    padding:10px;
+    padding:8px;
     text-align: center;
     font-size:1.4em;
     text-transform:uppercase;
-
-   
-
-
+    font-family:oswald;
     background-color:#5d7e95 ;
     color: $white;
     z-index: $header-z-index;
