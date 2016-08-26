@@ -58,6 +58,7 @@ section.main {
                             
                             height:90px; 
                             float:right;
+                            padding-right:20px;
 
                             }  
 
@@ -70,10 +71,11 @@ section.main {
                               a{
                                 @include desktop(){
                                   color:white;
-                                  padding-right:5px;
-                                  padding-left:5px;
+                                  margin-right:8px;
+                                  margin-left:8px;
                                   font-size:15px;
                                    font-weight:bold;
+                                   font-family:oswald;
                                 }
                               
                                } 
@@ -106,7 +108,7 @@ section.main {
                         @include desktop() {
                             text-align:right;
                             height:45px;
-                            padding-right:15px;
+                            padding-right:25px;
                             padding-top:3px;
                         }      
                     }  
@@ -114,6 +116,7 @@ section.main {
                     .small-phrase{
                      
                       color:white;
+                       font-size:small;
                        @include desktop(){
                          display:none;
                         }
@@ -130,8 +133,8 @@ section.main {
                               padding-top:18px;
                               width:50%;
                               float:left;
-                              font-size:smaller;
-                              color:#08262C;
+                              font-size:small;
+                              color:#ececeb;
                         }
                          @media only screen and (max-width: 768px) {   
                                 display:none;  
@@ -195,57 +198,56 @@ section.main {
 
  section.dropmenu {
    background-color:#AB1E2C;
-    @include desktop() {
+   @include desktop() {
         display: none;
-     }
-        .bt1{
-           display: block;
-           position:relative;
-           padding:.5em;
-           background-color: #ddd;
-           ;border-bottom:1px solid rgba(0,0,0,0.2);
-           height:48px;
-           @include desktop() {
+    }
+    .sc3{
+       margin-left:9px;
+       margin-right:9px;
+       .bt1{
+         display: block;
+         position:relative;
+          padding:.5em;
+          background-color:#ececeb;;
+         border-bottom:1px solid rgba(0,0,0,0.2);
+          height:48px;
+          @include desktop() {
              display: none;
-            } 
-            span{
-                position:absolute;
-                z-index:999;
-                top:0;
-                left:43%;
-                width:85px;
-                height:48px;
-                display:inline-block;
-                background:rgba(0,0,0,0.075);
-                text-align:center;
-               @include desktop(){
+           } 
+           span{
+              position:absolute;
+              z-index:999;
+              top:15px;
+              left:45%;
+              height:20px;
+              display:inline-block;
+               text-align:center;
+               font-weight:bold;
+               font-family:oswald;
+               font-size:16px;
+               color:#AB1E2C;
+
+                @include desktop(){
                   display:none;
                 }
-                i.navicon{
-                  position:relative;
-                  top:1.4em;
-                  font-size:12px;
-                  color:#666
-
+               
+            }
+        }
+       .well1{
+         text-align:center;
+           .well-lg{
+             border-radius:0px;
+               margin-bottom:1px;
+               padding:10px;
+              a{
+                 font-weight:bold;
+                 font-size:16px;
+                 font-family:oswald;
                 }
+               @include desktop(){
+               display:none
+               }
             }
         }
-        >well{
-        .well well-lg{
-        border-radius:0px;
-        margin-bottom:1px;
-        padding:10px;
-        }
-        }
-
-        .bt2{
-           text-align:center;
-
-          @include desktop(){
-                 display:none;
-            }
-            
-        }
-    
-
-  }
+    }  
+}
