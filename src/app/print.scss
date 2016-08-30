@@ -9,7 +9,11 @@
               > section.logo{
                  display:none;
                }
+               > section.dropmenu{
+               display:none;
+               }
             }
+
 
             &.overview-open {
                 overflow: visible;

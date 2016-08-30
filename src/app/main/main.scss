@@ -13,13 +13,14 @@ section.main {
             width:100%;
             height:50px;
             img{
-            width:120px;
-            height:65px;
+            width:110px;
+            height:55px;
             margin-top:8px;
              @include desktop(){
              width:130px;
-             height:70px;
+             height:65px;
              margin-top:10px;
+             margin-left:5px;
              }
             }
             
@@ -91,13 +92,14 @@ section.main {
                    #socialMedia{
                     text-align:center;
                       height:45px;
+                      margin-top:5px;
                       img{
                         width:30px;
                         height:30px;
                         @include desktop(){
                             width:30px;
                             height:30px;
-                            text-align:right;
+                            margin-left:0px;
                         }
 
                         
@@ -116,7 +118,7 @@ section.main {
                     .small-phrase{
                      
                       color:white;
-                       font-size:small;
+                       font-size:14px;
                        @include desktop(){
                          display:none;
                         }
