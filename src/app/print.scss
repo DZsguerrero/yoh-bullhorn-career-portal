@@ -1,10 +1,13 @@
 @media print {
     html {
-        overflow: visible;
+        overflow: visible !important;
+        height: initial;
 
         > body {
-            overflow: visible;
+            overflow: visible !important;
+            height: initial;
 
+<<<<<<< HEAD
             > section.main{ 
               > section.logo{
                  display:none;
@@ -17,48 +20,64 @@
 
             &.overview-open {
                 overflow: visible;
+=======
+            section.overview-open {
+                overflow: visible !important;
+>>>>>>> 5e7e357ff58302d14cc26fef3b39ce32ed13729b
 
-                > section.portal-app {
-                    overflow: visible;
+                > section.portal {
+                    overflow: visible !important;
 
-                    > aside.sidebar {
+                    aside.sidebar {
                         display: none;
-
                     }
 
-                    > section.main{
-                      overflow:hidden;
-                      display:none;
-                        
-                       > header {
-                            button[name="filters-menu"], button[name="over-arrow-back"] {
+                    section.main {
+                        overflow: visible !important;
+
+                        > header {
+                            button[name="filters-menu"],
+                            button[name="over-arrow-back"] {
                                 display: none;
                             }
                         }
+                    }
+                }
+            }
 
-                        > section.fade {
-                            overflow: visible;
+            section.fade {
+                overflow: visible !important;
+                height: auto;
 
-                            > section.job-detail {
-                                overflow: visible;
-                                flex-direction: column;
+                > section.job-detail {
+                    overflow: visible !important;
+                    flex-direction: column;
 
-                                > div.description {
-                                    order: 2;
-                                    .job-actions {
-                                        display: none;
-                                    }
-                                }
-
-                                > div.apply {
-                                    width: 100%;
-                                    button.apply, hr, .related-jobs, .category-filter {
-                                        display: none;
-                                    }
-                                }
-                            }
+                    > div.description {
+                        order: 2;
+                        overflow: visible !important;
+                        //page-break-before: always;
+                        .job-actions {
+                            display: none;
                         }
                     }
+                }
+            }
+
+            button.bhi-arrow-back {
+                display: none;
+            }
+
+            div.apply {
+                width: 100%;
+
+                .apply,
+                .break,
+                .btn-li-lg,
+                .category-filter,
+                .related-jobs,
+                hr {
+                    display: none !important;
                 }
             }
         }
