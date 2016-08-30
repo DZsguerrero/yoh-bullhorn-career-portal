@@ -1,30 +1,15 @@
 # D&Z-Bullhorn Career Portal
 
-[![Build Status](https://travis-ci.org/bullhorn/career-portal.svg)](https://travis-ci.org/bullhorn/career-portal)
-[![Dependency Status](https://gemnasium.com/bullhorn/career-portal.svg)](https://gemnasium.com/bullhorn/career-portal)
-[![Code Climate](https://codeclimate.com/github/bullhorn/career-portal/badges/gpa.svg)](https://codeclimate.com/github/bullhorn/career-portal)
-[![Test Coverage](https://codeclimate.com/github/bullhorn/career-portal/badges/coverage.svg)](https://codeclimate.com/github/bullhorn/career-portal/coverage)
+**[D&Z-Bullhorn Career Portal](http://www.bullhorn.com)** is the next-generation way to share jobs and source candidates from your Bullhorn ATS/CRM instance. Day & Zimmermann Corporate IT is customizing this Career Portal (Version 1.5) to add additional graphical and color-scheme branded capabilities for their use.
 
-**[D&Z-Bullhorn Career Portal](http://www.bullhorn.com)** is the next-generation way to share jobs and source candidates from your Bullhorn ATS/CRM instance. Download, configure and host your own career portal, or fork the source code and make it your own.
+## Credits
 
-## Releases
+Original Bullhorn Career Portal Authors - Kameron Sween and the whole Bullhorn Development Team (**[Bullhorn GitHub](https://github.com/bullhorn/career-portal)**)
+Bullhorn Project Manager for Day & Zimmermann/Yoh - Phil Laposa
+Day & Zimmermann VP of Software Development - Ed Bender
+Day & Zimmermann Manager of SharePoint & Web Development - Chuck Hughson
+Day & Zimmermann Web Developers - Bansi Prodductori, Sanford Guerrero
 
-* **[Latest Release](https://github.com/bullhorn/career-portal/releases/latest)**
-* **[All Releases](https://github.com/bullhorn/career-portal/releases)**
-
-## Contribute
-
-There are many ways to **[contribute](https://github.com/bullhorn/career-portal/blob/master/CONTRIBUTING.md)** to Bullhorn Career Portal.
-* **[Submit bugs](https://github.com/bullhorn/career-portal/issues)** and help us verify fixes as they are checked in.
-* Review **[source code changes](https://github.com/bullhorn/career-portal/pulls)**.
-* **[Contribute bug fixes](https://github.com/bullhorn/career-portal/blob/master/CONTRIBUTING.md)**.
-
-## Documentation
-
-*  **[Hosting](https://github.com/bullhorn/career-portal/wiki)**
-*  **[Bullhorn REST API Reference](http://developer.bullhorn.com/articles/getting_started)**
-*  **[Bullhorn Platform](http://bullhorn.github.io/platform)**
-*  **[Bullhorn Website](http://www.bullhorn.com)**
 
 ## Building
 
@@ -70,21 +55,6 @@ Running and building with configuration
 gulp --corpToken='[CORP_TOKEN]' --sl='[SWIMLANE]' --companyName='[COMPANY_NAME]' --liClientId='[LINKED_IN_CLIENT_ID]'
 gulp serve --corpToken='[CORP_TOKEN]' --sl='[SWIMLANE]' --companyName='[COMPANY_NAME]' --liClientId='[LINKED_IN_CLIENT_ID]'
 ```
-
-## Apply with LinkedIn
-
-**Bullhorn Career Portal** supports integrated LinkedIn profiles during the candidate application process via the
-[Apply with LinkedIn](https://developer.linkedin.com/docs/apply-with-linkedin) SDK. To enable this feature, **Bullhorn Career
-Portal** customers must [register as a LinkedIn integration partner](https://developer.linkedin.com/partner-programs/apply),
-[create and configure a new LinkedIn partner application](https://www.linkedin.com/developer/apps/new) and provide a value for the
-`CLIENT_ID` token in `app.json`. **Note** that the registered partner app should  have `r_fullprofile`, `r_contactinfo` and
-`r_emailaddress` default application permissions for best results.
-
-Additionally, **Bullhorn Career Portal** customers need to whitelist development and production environment IP addresses and/or
-hostnames in order to successfully connect to the LinkedIn API. A common development environment, and the default environment configured by
-the **Bullhorn Career Portal** build system is `localhost`, at the loopback address of `127.0.0.1`. The build system starts
-an HTTP Server at `http://localhost:3000` when building/running locally. Since LinkedIn doesn't allow for `localhost` to be whitelisted,
-whitelist `http://127.0.0.1` instead, and point the browser to the raw IP address.
 
 #### iOS & Safari
 
