@@ -6,8 +6,7 @@
         > body {
             overflow: visible !important;
             height: initial;
-
-<<<<<<< HEAD
+            
             > section.main{ 
               > section.logo{
                  display:none;
@@ -20,10 +19,8 @@
 
             &.overview-open {
                 overflow: visible;
-=======
             section.overview-open {
                 overflow: visible !important;
->>>>>>> 5e7e357ff58302d14cc26fef3b39ce32ed13729b
 
                 > section.portal {
                     overflow: visible !important;
