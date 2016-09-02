@@ -38,6 +38,7 @@ class CareerPortalModalController {
     }
     applyWithLinkedIn() {
         this.hasAttemptedLIApply = true;
+       // this.SharedData.modalState = 'open';
         this.LinkedInService.getUser()
             .then((linkedInUser) => {
                 this.ApplyService.form.firstName = linkedInUser.firstName || '';
@@ -46,6 +47,9 @@ class CareerPortalModalController {
                 this.ApplyService.form.phone = linkedInUser.phoneNumbers ? linkedInUser.phoneNumbers.values[0].phoneNumber : '';
                 this.ApplyService.form.resumeInfo = this.formatResume(linkedInUser);
             });
+                if (this.LinkedInService.userIsLoaded === true) {
+            this.SharedData.modalState = 'open';
+        }
     }
 
     closeModal(applyForm) {
@@ -118,6 +122,27 @@ class CareerPortalModalController {
         var tooltip = '<ul>';
         this.configuration.acceptedResumeTypes.forEach(function (type) {
             tooltip += '<li>' + type + '</li>';
+        });
+        tooltip += '</ul>';
+        return tooltip;
+    }
+
+    getEEOCTooltipText(eeocSection) {
+        var tooltip;
+        if (this.configuration.eeoc[eeocSection]) {
+            tooltip = this.configuration.eeoc[eeocSection].tooltip.html;
+        } else {
+            tooltip = this.configuration.eeoc.tooltip.html;
+        }
+        return tooltip.replace(/\{companyName\}/g, this.configuration.companyName);
+    }
+
+    getEEOCEthnicityTooltipText() {
+        var tooltip = '<ul>';
+        this.configuration.eeoc.ethnicity.options.forEach(function (option) {
+            if (option.info) {
+                tooltip += '<li>' + option.label + ': ' + option.info + '</li>';
+            }
         });
         tooltip += '</ul>';
         return tooltip;
