@@ -172,6 +172,7 @@ class SearchService {
                         query += this.requestParams.text();
                     }
 
+                    query += ` AND NOT (employmentType${isSearch ? ':"Internal Job"' : '=\'"Internal Job"\''})`; 
                     query += this.requestParams.publishedCategory(isSearch, fields);
                     query += this.requestParams.location(isSearch, fields);
 
