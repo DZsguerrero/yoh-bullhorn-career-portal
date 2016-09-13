@@ -3,7 +3,7 @@ class MainController {
         'ngInject';
 
         this.SharedData = SharedData;
-        this.SharedData.isCollapsed = true;
+        this.SharedData.isCollapsed = false;
         this.SharedData.CareerResource = false;
         this.SharedData.Diversity = false;
         this.SharedData.About = false;

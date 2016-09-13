@@ -53,8 +53,8 @@ angular.module('CareerPortal', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router
     .service('LinkedInService', LinkedInService)
     .service('MobileDetection', MobileDetection)
     .service('VerifyLI', VerifyLI)
-    .service('CacheService', CacheService)
-    .directive('resizable', function($window,SharedData) {
+    .service('CacheService', CacheService);
+   /* .directive('resizable', function($window,SharedData) {
   return function($scope) {
     $scope.initializeWindowSize = function() {
         console.log($window.innerWidth);
@@ -69,7 +69,7 @@ angular.module('CareerPortal', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router
       return $scope.$apply();
     });
   };
-});
+});*/
 
 // Deferring the bootstrap to make sure we have loaded the config from app.json
 deferredBootstrapper.bootstrap({
