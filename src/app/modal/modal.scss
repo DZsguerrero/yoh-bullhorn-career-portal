@@ -78,7 +78,7 @@
                     }
 
                     &.location, &.separator, &.type {
-                        color: #3D5668
+                        color: $light-bg; //#3D5668
                     }
                 }
 
@@ -136,7 +136,7 @@
 
                             > input, select {
                                 flex: 1;
-                                color: lighten($dark-bg, 30%);
+                                color: lighten($dark-bg, 10%);
 
                                 &.ng-invalid {
                                     &.ng-valid-required {
@@ -321,11 +321,11 @@
 
                 &[name="submit"] {
                     color: $white;
-                    background: $secondary;
+                    background: $primary;
                     border-radius: 2px;
                     width: 100%;
                     font-weight: 700;
-                    margin-top: -30px;
+
                     > i {
                         float: right;
                     }
@@ -341,7 +341,7 @@
                 }
 
                 &.disabled {
-                    background-color: lightgray;
+                    background-color:$primary;
                 }
             }
         }

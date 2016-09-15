@@ -169,7 +169,8 @@
             <!-- FOOTER -->
             <footer data-ng-class="{'success':!modal.showForm}">
                 <button data-ng-show="modal.showForm" name="cancel" data-ng-click="modal.closeModal(applyForm)">{{ 'modal.cancelButton' | i18n }}</button>
-                <button data-ng-show="modal.showForm" name="submit" data-ng-click="modal.submit(applyForm)" data-ng-disabled="modal.isSubmitting || modal.enableSendButton(applyForm.$valid)" data-ng-class="{ 'disabled': modal.enableSendButton(applyForm.$valid) }">
+                <!--<button data-ng-show="modal.showForm" name="submit" data-ng-click="modal.submit(applyForm)" data-ng-disabled="modal.isSubmitting || modal.enableSendButton(applyForm.$valid)" data-ng-class="{ 'disabled': modal.enableSendButton(applyForm.$valid) }">
+
                     <span data-ng-if="!modal.isSubmitting">
                         {{ 'modal.sendButton' | i18n }}
                     </span>
@@ -181,7 +182,8 @@
                             <div class="loading-dot"></div>
                         </div>
                     </span>
-                </button>
+                </button>-->
+                <button data-ng-show="modal.showForm" name="submit" data-ng-click="modal.submit(applyForm)" class=""><!-- ngIf: !modal.isSubmitting --><span data-ng-if="!modal.isSubmitting" class="ng-binding ng-scope">Submit</span><!-- end ngIf: !modal.isSubmitting --> <!-- ngIf: modal.isSubmitting --></button>
                 <button data-ng-hide="modal.showForm" name="ok" data-ng-click="modal.closeModal(applyForm)">{{ 'modal.okButton' | i18n }}</button>
             </footer>
         </div>
