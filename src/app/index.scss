@@ -83,7 +83,7 @@ button {
 
 a {
     color: $primary;
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:visited, &:focus, &:active {
         color: $primary;
