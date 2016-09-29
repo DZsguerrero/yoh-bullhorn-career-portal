@@ -77,8 +77,13 @@
                         margin-bottom: 1.2em;
                     }
 
-                    &.location, &.separator, &.type {
+                    &.location, &.type {
                         color: #3D5668
+                    }
+                    
+                    &.separator {
+                        color:#3D5668;
+                        margin-right: 5px;
                     }
                 }
 
@@ -124,6 +129,7 @@
                             display: flex;
                             flex-direction: row;
                             align-items: center;
+                            display:block;
 
                             > .required {
                                 color: $error;
