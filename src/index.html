@@ -5,12 +5,28 @@
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Career Portal</title>
-         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <title>Yoh | Career Portal</title>
+        
         <!-- default font -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
         <link  href="https://fonts.googleapis.com/css?family=Raleway:400,700,300" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
+        
+        <!-- Shortcut icons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/images/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/images/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/images/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/images/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon-180x180.png" />
+        <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="assets/images/android-chrome-192x192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="assets/images/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="assets/images/favicon-16x16.png" sizes="16x16" />
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      
 
         <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -48,5 +64,16 @@
         <!-- angular templates will be automatically converted in js and inserted here -->
         <!-- endinject -->
         <!-- endbuild -->
+        
+        <script type="text/javascript">
+            $('#ethnicity').click(function() {
+                if (this.checked) {
+                    $("#eeoc-race").prop("disabled", "disabled");
+                }
+                else {
+                    $("#eeoc-race").prop("disabled", false);
+                }
+            });
+        </script>
     </body>
 </html>

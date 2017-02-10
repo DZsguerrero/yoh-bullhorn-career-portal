@@ -117,13 +117,28 @@
                     </div>
                     <div class="form-field">
                         <div class="input">
-                            <label for="eeoc-ethnicity">
+                            <label for="eeoc-ethnicity" style="display: block;">
                                 {{ ::modal.configuration.eeoc.ethnicity.label }}
                                 <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCEthnicityTooltipText() }}"></i>
                             </label>
-                            <!-- TODO Need to dynamically determine the size -->
-                            <select id="eeoc-ethnicity" data-ng-model="modal.ApplyService.form.ethnicity" size="7" multiple required>
+                            <!-- TODO Need to dynamically determine the size 
+                            <select id="eeoc-ethnicity" data-ng-model="modal.ApplyService.form.ethnicity" size="7" required>
                                 <option data-ng-repeat="ethnicity in ::modal.configuration.eeoc.ethnicity.options" value="{{ ethnicity.value }}">{{ ethnicity.label }}</option>
+                            </select>
+                            -->
+                            <!-- ng-disabled="checked" to disable object once checked -->
+                             <input type="checkbox" data-ng-model="modal.ApplyService.form.ethnicity" id="eeoc-ethnicity" ng-true-value="'E1'" ng-false-value="'NONE'" style="width: 40px !important;"> Hispanic/Latino<br> 
+                        </div>                    
+                    </div>
+                    <div class="form-field">
+                        <div class="input">
+                            <label for="eeoc-race">
+                                {{ ::modal.configuration.eeoc.race.label }}
+                                <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCRaceTooltipText() }}"></i>
+                            </label>
+                            <!-- TODO Need to dynamically determine the size -->
+                            <select id="eeoc-race" data-ng-model="modal.ApplyService.form.race" size="7" ng-disabled="modal.ApplyService.form.ethnicity === 'E1'">
+                                <option data-ng-repeat="race in ::modal.configuration.eeoc.race.options" value="{{ race.value }}">{{ race.label }}</option>
                             </select>
                         </div>
                     </div>

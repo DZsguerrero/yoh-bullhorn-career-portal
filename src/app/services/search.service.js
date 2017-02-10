@@ -1,9 +1,25 @@
 class SearchService {
-    constructor($http, configuration, $q) {
+    constructor($http, configuration, $q, $location) {
         'ngInject';
         this.$http = $http;
         this.configuration = configuration;
         this.$q = $q;
+
+        var searchObj = $location.search();
+
+        if (searchObj.categoryID) {  // Category ID search
+            // The default category is the ID of a category in Bullhorn. Its not clear at this point how a client would
+            // know what the potential category IDs are. Perhaps they'd be supplied to them? If not, we might need to
+            // change this to support receiving the category by name.
+            this.searchParams.category.push(parseInt(searchObj.categoryID, 10));
+        }
+        else if (searchObj.q) {  // Text search
+            this.searchParams.textSearch = searchObj.q;
+        }
+
+        if (searchObj.defaultLocation && searchObj.defaultLocation.indexOf(':') !== -1) {
+            this.searchParams.location.push(searchObj.defaultLocation.split(':').join('|'));
+        }
     }
 
     static get _() {
@@ -15,7 +31,7 @@ class SearchService {
     }
 
     static get _fields() {
-        return SearchService._.fields || (SearchService._.fields = 'id,title,publishedCategory(id,name),address(city,state),employmentType,dateLastPublished,publicDescription,isOpen,isPublic,isDeleted');
+        return SearchService._.fields || (SearchService._.fields = 'id,title,clientCorporation(name),publishedCategory(id,name),address(city,state),employmentType,dateLastPublished,correlatedCustomText4,publicDescription,isOpen,isPublic,isDeleted');
     }
 
     static get _sort() {
@@ -66,8 +82,11 @@ class SearchService {
                         this.searchParams.category.length = 0;
                     } else if (specificParam === 'text') {
                         this.searchParams.textSearch = '';
+                    } else if (specificParam === 'companyName') {
+                        this.searchParams.companyNameSearch = '';
                     } else {
                         this.searchParams.textSearch = '';
+                        this.searchParams.companyNameSearch = '';
                         this.searchParams.category.length = 0;
                         this.searchParams.location.length = 0;
                     }
@@ -100,7 +119,6 @@ class SearchService {
                 count: () => this.searchParams.count || SearchService._count,
                 start: () => this.searchParams.start || 0,
                 publishedCategory: (isSearch, fields) => {
-
                     if ('publishedCategory(id,name)' !== fields) {
                         if (this.searchParams.category.length > 0) {
                             var equals = isSearch ? ':' : '=';
@@ -161,19 +179,48 @@ class SearchService {
 
                     return '';
                 },
+                // Example of adding some custom filtering. Currently this receives input from a text control on the
+                // front-end (similar to the above text search)
+                companyName: () => {
+                    if (this.searchParams.companyNameSearch) {
+                        return ' AND (clientCorporation.name:' + this.searchParams.companyNameSearch + '*)';
+                    }
+                    return '';
+                },
                 query: (isSearch, additionalQuery, fields) => {
-                    var query = `(isOpen${isSearch ? ':1' : '=true'})`;
+                    // 1/17/2016:  Querying by division. - Sanford Guerrero
+                    // 1.  Store Division values.
+                    var query = '';
+                    var divisions = ['Yoh Aviation','Yoh Field Agile','Yoh Field East','Yoh Field Healthcare','Yoh Field West','Yoh National Accounts','Yoh RPO','Yoh Validation','Yoh Managed Services','Yoh United Kingdom','Yoh Corporate'];
+                    // 2.  Prepare query string.
+                    // If searching for job ID's, query correlatedCustomText4 (division) by bind variable (:"Division").
+                    // Else, write out value to go into IN statement.
+                    if (divisions.length > 0) {
+                        var getDivisionValue = isSearch ? (division) => '(correlatedCustomText4:"' + division + '")' : (division) => '\'' + division + '\'';
+                        var join = isSearch ? ' OR ' : ',';
+                        var prefix = isSearch ? '' : 'correlatedCustomText4 IN ';
+                        var values = [];
+                        // Loop through Yoh division array values and build correlatedCustomText4 query.
+                        for (var i = 0; i < divisions.length; i++) {
+                            values.push(getDivisionValue(divisions[i]));
+                        }
+                        // Concatenate conditions statements.  (isOpen and correlatedCustomText4)
+                        query = `(isOpen${isSearch ? ':1' : '=true'}) AND ` + prefix + `(` + values.join(join) +  `)`;
+                    }
+                    else {
+                        // Concatenate conditions statements.  (isOpen and correlatedCustomText4)
+                        query = `(isOpen${isSearch ? ':1' : '=true'})`;
+                    }
 
                     if (additionalQuery) {
                         query += ` AND (${additionalQuery})`;
                     }
 
                     if (isSearch) {
+                        //query += ' ' + SearchService._divisionFilter;
                         query += this.requestParams.text();
+                        query += this.requestParams.companyName();
                     }
-
-                    query += ` AND NOT (employmentType${isSearch ? ':"Internal Job"' : '=\'Internal Job\''})`; 
-                   // query += ` AND (employmentType${isSearch ? ':"Internal Job"' : '=\'Internal Job\''})`;
                     query += this.requestParams.publishedCategory(isSearch, fields);
                     query += this.requestParams.location(isSearch, fields);
 
@@ -183,17 +230,17 @@ class SearchService {
                     var getValue = isSearch ? (job) => 'id:' + job.id : (job) => job.id;
                     var join = isSearch ? ' OR ' : ',';
                     var prefix = isSearch ? '' : 'id IN ';
-
                     var values = [];
-
                     for (var i = 0; i < jobs.length; i++) {
                         values.push(getValue(jobs[i]));
                     }
-
-                    return prefix + '(' + values.join(join) + ')';
+                    return prefix +  `(` + values.join(join) +  `)`;
                 },
                 relatedJobs: (publishedCategoryID, idToExclude) => {
-                    var query = `(isOpen=true) AND publishedCategory.id=${publishedCategoryID}`;
+                    // Original query
+                    //var query = `(isOpen=true) AND publishedCategory.id=${publishedCategoryID}`;
+                    // 1/25/2017 Update:  Search related jobs based on division
+                    var query = `(isOpen=true) AND publishedCategory.id=${publishedCategoryID} AND correlatedCustomText4 IN ('Yoh Aviation','Yoh Field Agile','Yoh Field East','Yoh Field Healthcare','Yoh Field West','Yoh National Accounts','Yoh RPO','Yoh Validation','Yoh Managed Services','Yoh United Kingdom','Yoh Corporate') `;
 
                     if (idToExclude && parseInt(idToExclude) > 0) {
                         query += ' AND id <>' + idToExclude;
@@ -230,6 +277,7 @@ class SearchService {
     get searchParams() {
         return this._.searchParams || (this._.searchParams = {
                 textSearch: '',
+                companyNameSearch: '',
                 location: [],
                 category: [],
                 sort: '',

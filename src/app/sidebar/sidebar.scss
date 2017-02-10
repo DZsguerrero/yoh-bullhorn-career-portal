@@ -1,5 +1,8 @@
 aside {
-    height: 100%;
+    //height: 100%;
+    height: calc(100% - 180px);
+    overflow:auto;
+    box-sizing: border-box;    
     width: 80%;
     min-width: 80%;
     position: absolute;
@@ -21,6 +24,9 @@ aside {
         position: inherit;
         float: left;
         left: 0;
+        height: calc(100% - 90px);
+        overflow:auto;
+        box-sizing: border-box;
     }
 
     > header {
@@ -32,11 +38,11 @@ aside {
         padding: 0 1.5em;
 
         > label {
-            font-size: 1.6em;
-            font-weight: 500;
+            font-size: 1.4em;
+            font-weight: 400;
             width: auto;
             text-transform:uppercase;
-           font-family:$font-stack;
+            font-family:$font-stack;
         }
 
         > div.button-container {
@@ -65,17 +71,22 @@ aside {
                 }
             }
         }
+        
+        
     }
 
     > section {
         flex: 1;
-        height: calc(100% - 230px);
-        overflow: auto;
+        //height: calc(100% - 250px);
+        //overflow: scroll;
         padding: 1em;
+        
         @include desktop(){
-                    height: calc(100% - 130px);
-                    overflow:auto;
-        }            
+          height: calc(100% - 90px);
+            //overflow:scroll;
+            //padding-bottom:100px;
+        } 
+        
 
         > div.keyword-search {
             position: relative;
@@ -123,7 +134,7 @@ aside {
             margin-bottom: 2em;
             display: flex;
             flex-flow: row wrap;
-            max-height: 370px;
+            //max-height: 370px;
             overflow: hidden;
 
             &.active {
@@ -173,14 +184,14 @@ aside {
 
                 > label {
                     flex: 1;
-                    font-size: 1.1em;
+                    font-size: 0.9em;
                     cursor: pointer;
                     padding-left: 1em;
                     padding-right: 1em;
                 }
 
                 > span {
-                    font-size: 1.1em;
+                    font-size: 0.9em;
                 }
 
                 > input[type="checkbox"] {
@@ -233,6 +244,7 @@ aside {
             display: none;
         }
 
+        /*
         &::-webkit-scrollbar {
             width: 8px;
         }
@@ -248,6 +260,7 @@ aside {
             -webkit-box-shadow: inset 1px 1px 6px $base-color;
             background-color: $base-color;
         }
+        */
     }
 
     &.show {
