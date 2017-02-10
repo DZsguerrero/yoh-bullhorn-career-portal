@@ -78,12 +78,13 @@
                     }
 
                     &.location, &.type {
-                        color: #3D5668
+                        //color: #3D5668
+                        
                     }
                     
                     &.separator {
-                        color:#3D5668;
-                        margin-right: 5px;
+                        //color:#3D5668;
+                        //margin-right: 5px;
                     }
                 }
 
@@ -232,8 +233,9 @@
                 }
 
                 input {
-                    color: lighten($dark-bg, 30%);
-                    width: 100%;
+                    //color: lighten($dark-bg, 30%);
+                    color: $dark-bg;
+                    width: 95%;
                     margin-top: 1em;
 
                     &.ng-invalid {
@@ -373,6 +375,7 @@
     color: $error;
     margin-left: 1.1em;
     margin-top: 0.3em;
+    font-weight: bold;
 
     &.submit-error {
         margin-bottom: 1em;

@@ -30,25 +30,22 @@
         }
     },
     "defaultGridState": "list-view",
-     "eeoc": {
-        "header1": "Voluntary Self-Identification Form for Race, Gender and Ethnicity",
-        "header2": "Voluntary Self-Identification Form for Veteran Applicants",
+    "eeoc": {
+        "header1": "Voluntary Self-Identification Form",
+        "header2": "Applicant Self-Identification",
         "header3": "Voluntary Self-Identification of Disability",
         "tooltip": {
-            "html": "<strong>Statement of Purpose:</strong> As a government contractor, {companyName} is required to invite applicants to self-identify their gender, race and ethnicity. This self-identification is voluntary and your decision to complete it will not in any way affect your employment or result in adverse treatment. This information will be maintained in the company's personnel database used solely for use in required government reporting; it will not be kept in employee personnel files."
+            "html": "Pursuant to federal regulations, we are required to invite applicants and employees to self-identify their gender, race, and ethnicity.  This self-identification is voluntary; and there never has been, nor will there be, any adverse action taken against you if you choose not to reply to this survey.  This information will not be kept in your personnel file.  It will be maintained in the company’s personnel database solely for use in required government reporting.<br/><br/>Please print your name, SSN, job title or job title applied for, today’s date.  You may check only one box each for gender, ethnicity, and race."
         },
         "gender": {
             "label": "Gender",
-            "options": [
+            "options": [ 
                 {
-                    "value": "U",
-                    "label": "Unknown"
+                    "value": "F",
+                    "label": "Female"
                 }, {
                     "value": "M",
                     "label": "Male"
-                }, {
-                    "value": "F",
-                    "label": "Female"
                 }, {
                     "value": "D",
                     "label": "I do not wish to self-identify"
@@ -56,79 +53,87 @@
             ]
         },
         "ethnicity": {
-            "label": "Ethnicity / Race (Select all that apply)",
+            "label": "Ethnicity",
             "options": [
                 {
-                    "value": "HL",
+                    "value": "E1",
                     "label": "Hispanic/Latino",
-                    "info": "Persons of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or region regardless of race."
-                }, {
-                    "value": "WH",
-                    "label": "White",
+                    "info": "Persons of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race."
+                }
+            ]
+        },
+        "race": {
+            "label": "Race (Answer only if you did not identify your ethnicity as Hispanic/Latino)",
+            "options": [
+                {
+                    "value": "R5",
+                    "label": "White (Not Hispanic/Latino)",
                     "info": "Persons having origins in any of the original peoples of Europe, the Middle East or North Africa."
                 }, {
-                    "value": "BL",
-                    "label": "Black",
+                    "value": "R3",
+                    "label": "Black/African American (Not Hispanic/Latino)",
                     "info": "Persons having origins in any of the Black racial groups of Africa."
                 }, {
-                    "value": "AS",
-                    "label": "Asian",
+                    "value": "R2",
+                    "label": "Asian (Not Hispanic/Latino)",
                     "info": "Persons having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand and Vietnam."
                 }, {
-                    "value": "NP",
-                    "label": "Native Hawaiian or Pacific Islander",
+                    "value": "R4",
+                    "label": "Native Hawaiian or Other Pacific Islander (Not Hispanic/Latino)",
                     "info": "Persons having origins in any of the peoples of Hawaii, Guam, Samoa, or other Pacific Islands."
                 }, {
-                    "value": "IA",
-                    "label": "American Indian/Alaskan Native",
+                    "value": "E1",
+                    "label": "American Indian/Alaska Native (Not Hispanic/Latino)",
                     "info": "Persons having origins in any of the original peoples of North and South America, (including Central America), and who maintain tribal affiliation or community attachment."
                 }, {
+                    "value": "R6",
+                    "label": "Two or More Races (Not Hispanic/Latino)",
+                    "info": "Persons who identify with more than one of the above five races."
+                }, {
                     "value": "DN",
-                    "label": "I do not wish to self-identify"
+                    "label": "I do not wish to self-identify",
+                    "info": ""
                 }
             ]
         },
         "veteran": {
             "label": "Please Select",
             "tooltip": {
-                "html": "<p><strong>Statement of Purpose:</strong> {companyName} is a government contractor subject to the Vietnam Era Veterans' Readjustment Assistance Act of 1974, as amended by the Jobs for Veterans Act of 2002, 38 U.S.C. 4212 (VEVRAA), which requires Government contractors to take affirmative action to employ and advance in employment: (1) disabled veterans; (2) recently separated veterans; (3) active duty wartime or campaign badge veterans; and (4) Armed Forces service medal veterans.</p><p><strong>Definitions:</strong></p><ul><li>Disabled Veteran</li><li>Active Duty Wartime or Campaign Badge Veteran</li><li>Armed Forces Service Medal Veteran</li><li>Recently Separated Veteran</li><li>Protected Veteran</li></ul><p>If you believe you belong to any of the categories of protected veterans listed above, please indicate by checking the appropriate box below. As a Government contractor, Yoh requests this information in order to measure the effectiveness of the outreach and positive recruitment efforts it undertakes pursuant to VEVRAA. Submission of this information is voluntary, and refusal to provide it will not subject you to any adverse treatment. The information provided will be used only in ways that are not inconsistent with VEVRAA. Yoh is an EEO employer and does not discriminate in hiring against any individual on the basis of race, color, gender, national origin, ancestry, religion, physical or mental disability, age, veteran status, sexual orientation, gender identity or expression, marital status, pregnancy, citizenship, or any other factor protected by anti-discrimination laws.</p>"
+                "html": "We are a Government contractor subject to the Vietnam Era Veterans' Readjustment Assistance Act of 1974, as amended by the Jobs for Veterans Act of 2002, 38 U.S.C. 4212 (VEVRAA), which requires Government contractors to take affirmative action to employ and advance in employment: (1) disabled veterans; (2) recently separated veterans; (3) active duty wartime or campaign badge veterans; and (4) Armed Forces service medal veterans. These classifications are defined as follows and are hereafter referred to all together as \"protected veterans\":<br/><br/>A \"disabled veteran\" is one of the following:<br/><br/>a veteran of the U.S. military, ground, naval or air service who is entitled to compensation (or who but for the receipt of military retired pay would be entitled to compensation) under laws administered by the Secretary of Veterans Affairs; or<br/><br/>a person who was discharged or released from active duty because of a service-connected disability.<br/><br/>A \"recently separated veteran\" means any veteran during the three-year period beginning on the date of such veteran's discharge or release from active duty in the U.S. military, ground, naval, or air service.<br/><br/>An \"active duty wartime or campaign badge veteran\" means a veteran who served on active duty in the U.S. military, ground, naval or air service during a war, or in a campaign or expedition for which a campaign badge has been authorized under the laws administered by the Department of Defense.<br/><br/>An \"Armed forces service medal veteran\" means a veteran who, while serving on active duty in the U.S. military, ground, naval or air service, participated in a United States military operation for which an Armed Forces service medal was awarded pursuant to Executive Order 12985.<br/><br/>If you believe you belong to any of the categories of protected veterans listed above, please indicate by checking the appropriate box below. As a Government contractor subject to VEVRAA, we request this information in order to measure the effectiveness of the outreach and positive recruitment efforts we undertake pursuant to VEVRAA.<br/><br/>Submission of this information is voluntary and refusal to provide it will not subject you to any adverse treatment. The information provided will be used only in ways that are not inconsistent with VEVRAA as amended.  We are an equal opportunity employer.  We do not discriminate in hiring or employment against any individual on the basis of race, color, gender, national origin, ancestry, religion, physical or mental disability, age, veteran status, sexual orientation, gender identity or expression, marital status, pregnancy, citizenship, or any other factor protected by anti-discrimination laws."
             },
             "options": [
                 {
                     "value": "P",
-                    "label": "Protected Veteran"
+                    "label": "I identify as one or more of the classifications of protected veterans"
                 }, {
                     "value": "V",
-                    "label": "Veteran"
+                    "label": "I identify as a veteran, just not a protected veteran"
                 }, {
                     "value": "N",
-                    "label": "Non-Veteran"
+                    "label": "I am not a veteran"
                 }, {
                     "value": "D",
-                    "label": "Decline to Answer"
+                    "label": "I do not wish to self-identify"
                 }
             ]
         },
-         "disability": {
-             "label": "Please Select",
-             "tooltip": {
-                "html": "<p>[Form CC-305, OMB Control Number 1250-0005, Expires 1/31/2017]</p><p><strong>Why Are You Being Asked to Complete This Form?</strong><br/>As a government contractor, Yoh is required to reach out to, hire, and provide equal opportunity to qualified people with disabilities. To help measure how well Yoh is doing, it is asking you to tell us if you have a disability or if you ever had a disability. Completing this form is voluntary, and any answer you give will be kept private and will not be used against you in any way.</p><p><strong>How Do I know if I have a Disability?</strong><br/>You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity, or if you have a history or record of such an impairment or medical condition. Disabilities include, but are not limited to: blindness, deafness, cancer, diabetes, epilepsy, autism, cerebral palsy, HIV/AIDS, schizophrenia, muscular dystrophy, bipolar disorder, major depression, multiple sclerosis, missing limbs or partially missing limbs, post-traumatic stress disorder, obsessive compulsive disorder, impairments requiring the use of a wheelchair, or an intellectual disability.</p>"
-             },
-             "options": [
-                 {
-                     "value": "Y",
-                     "label": "Disability"
-                 }, {
-                     "value": "N",
-                     "label": "No Disability"
-                 }, {
-                     "value": "U",
-                     "label": "Unknown"
-                 }, {
-                     "value": "D",
-                     "label": "I do not wish to self-identify"
-                 }
-             ]
-         }
+            "disability": {
+                "label": "Please Select",
+                "tooltip": {
+                    "html": "<b>Why are you asked to complete this form?</b><br/><br/>Because we do business with the government, we must reach out to, hire, and provide equal opportunity to qualified people with disabilities.  To help us measure how well we are doing, we are asking you to tell us if you have a disability or if you ever had a disability.  Completing this form is voluntary, but we hope that you will choose to fill it out.  If you are applying for a job, any answer you give will be kept private and will not be used against you in any way.<br/><br/>If you already work for us, your answer will not be used against you in any way.  Because a person may become disabled at any time, we are required to ask all of our employees to update their information every five years.  You may voluntarily self-identify as having a disability on this form without fear of any punishment because you did not identify as having a disability earlier.<br/><br/><b>How do I know if I have a disability?</b><br/><br/>You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity, or if you have a history or record of such an impairment or medical condition.<br/><br/>Disabilities include, but are not limited to:<br/>Blindness * Autism * Bipolar disorder * Post-traumatic stress disorder (PTSD) * Deafness * Cerebral palsy * Major depression * Obsessive compulsive disorder * Cancer * HIV/AIDS * Multiple sclerosis (MS) * Impairments requiring the use of a wheelchair * Diabetes * Epilepsy * Schizophrenia * Muscular dystrophy * Missing limbs or partially missing limbs * Intellectual disability (previously called mental retardation)"
+            },
+            "options": [
+                {
+                    "value": "Y",
+                    "label": "Yes, I have a Disability (or previously had a disability)"
+                }, {
+                    "value": "N",
+                    "label": "No, I don’t have a Disability"
+                }, {
+                    "value": "D",
+                    "label": "I don’t wish to answer."
+                }
+            ]
+        }
     }
 }

@@ -1,24 +1,22 @@
 header.app {
     height: $header-height;
     min-height: $header-height;
-    padding:8px;
+    padding: 0 1.5em;
     text-align: center;
-    font-size:1.4em;
     text-transform:uppercase;
-    font-family:oswald;
-    background-color:#5d7e95 ;
+    font-family: $font-stack;
+    background-color: #5d7e95;
     color: $white;
     z-index: $header-z-index;
 
     @include desktop() {
         text-align: left;
-        
     }
-
-    > a {
+    
+    > label {
         display: inline-block;
-        font-size: 2em;
-        font-weight: 700;
+        font-size: 1.4em;
+        font-weight: 400;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
