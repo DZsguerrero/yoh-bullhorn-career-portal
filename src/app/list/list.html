@@ -1,7 +1,7 @@
 <section class="job-list ng-scope">
     <div class="cards">
         <div class="card-wrapper ng-scope" data-ng-repeat="job in list.SearchService.currentListData | orderBy:dateLastPublished">
-            <a class="card slide-up-item" data-ng-href="#/jobs/{{job.id}}">
+            <a class="card slide-up-item" data-ng-href="#/jobs/{{job.id}}" analytics-on="click" analytics-event="{{::job.title}}" analytics-category="jobs.yoh.com Job Click" analytics-label="https://jobs.yoh.com/#/jobs/{{job.id}}">
                 <span class="card-date ng-binding ng-scope" data-ng-if="job.dateLastPublished">{{'common.addedLabel' | i18n}} - {{job.dateLastPublished | displayDate}}</span>
 
                 <span class="card-title-category">

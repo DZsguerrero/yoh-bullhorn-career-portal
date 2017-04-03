@@ -20,6 +20,7 @@ class JobListController {
         this.SearchService.searchParams.reloadAllData = true;
         this.SearchService.findJobs();
     }
+
 }
 
 export default JobListController;
