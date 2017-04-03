@@ -1,6 +1,6 @@
 # D&Z-Bullhorn Career Portal
 
-**[D&Z-Bullhorn Career Portal](http://www.bullhorn.com)** is the next-generation way to share jobs and source candidates from your Bullhorn ATS/CRM instance. Day & Zimmermann Corporate IT is customizing this Career Portal (Version 1.5) to add additional graphical and color-scheme branded capabilities for their use.
+**[D&Z-Bullhorn Career Portal](http://www.bullhorn.com)** is the next-generation way to share jobs and source candidates from your Bullhorn ATS/CRM instance. Day & Zimmermann Corporate IT is customizing this Career Portal (Version 1.6) to add additional graphical and color-scheme branded capabilities for their use.
 
 ## Credits
 
@@ -18,13 +18,13 @@ In order to build D&Z Bullhorn Career Portal, ensure that you have **[Git](http:
 Clone a copy of the repo:
 
 ```
-git clone https://github.com/bullhorn/career-portal.git
+git clone https://github.com/DZsguerrero/yoh-bullhorn-career-portal.git
 ```
 
 Change to the Career Portal directory:
 
 ```
-cd career-portal
+cd yoh-bullhorn-career-portal
 ```
 
 Install build tools and dev dependencies:
@@ -34,6 +34,9 @@ npm install -g bower
 npm install -g gulp
 npm install
 bower install
+npm install angulartics
+bower install angulartics
+bower install angulartics-google-analytics -save
 ```
 
 Use one of the following to build and test:
