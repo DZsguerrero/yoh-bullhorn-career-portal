@@ -19,7 +19,8 @@
     "roboto-fontface": "~0.4.3",
     "angular-dropdowns": "~1.5.1",
     "angular-vertical-menu": "~0.0.1",
-    "raleway-fontface":"~0.1.0"
+    "raleway-fontface": "~0.1.0",
+    "angulartics-google-analytics": "^0.4.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.3"
