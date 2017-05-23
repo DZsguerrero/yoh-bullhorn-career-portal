@@ -34,9 +34,6 @@ npm install -g bower
 npm install -g gulp
 npm install
 bower install
-npm install angulartics
-bower install angulartics
-bower install angulartics-google-analytics -save
 ```
 
 Use one of the following to build and test:
