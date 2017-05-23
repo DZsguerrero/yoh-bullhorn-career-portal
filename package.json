@@ -52,7 +52,9 @@
     "webpack-stream": "~2.1.0",
     "wiredep": "~2.2.2",
     "wrench": "~1.5.8",
-    "yargs": "^3.25.0"
+    "yargs": "^3.25.0",
+    "angulartics": "1.4.0",
+    "angulartics-google-analytics": "0.3.0"
   },
   "engines": {
     "node": ">=0.10.0"
