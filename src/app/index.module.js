@@ -25,7 +25,9 @@ import StripHtmlFilter from './filters/striphtml.filter';
 import OmitFiltersFilter from './filters/omitfilters.filter';
 import DisplayDateFilter from './filters/displayDate.filter';
 
-angular.module('CareerPortal', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router', 'ngFileUpload', '720kb.tooltips', 'ng-fastclick', 'ngLocalize', 'ngLocalize.Config', 'ngLocalize.InstalledLanguages', 'ngLocalize.Events', 'ui.bootstrap','angulartics', 'angulartics.google.analytics'])
+require('angulartics');
+
+angular.module('CareerPortal', ['ngAnimate', 'ngTouch', 'ngSanitize', 'ui.router', 'ngFileUpload', '720kb.tooltips', 'ng-fastclick', 'ngLocalize', 'ngLocalize.Config', 'ngLocalize.InstalledLanguages', 'ngLocalize.Events', 'ui.bootstrap','angulartics', require('angulartics-google-analytics')])
    .run(function($rootScope) {
     $rootScope.showLogo = true;
 })
