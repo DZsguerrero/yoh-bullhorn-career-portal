@@ -3,7 +3,8 @@
         <!-- HEADER -->
         <header>
             <section data-ng-if="modal.showForm">
-                <h2>{{ modal.SearchService.currentDetailData.title }}</h2>
+                <h2 data-ng-if="modal.SearchService.currentDetailData.customText2">{{ modal.SearchService.currentDetailData.customText2 }}</h2>
+                <h2 data-ng-if="!modal.SearchService.currentDetailData.customText2">{{ modal.SearchService.currentDetailData.title }}</h2>                                                
                 <!-- CATEGORY -->
                 <span class="category">{{ modal.SearchService.currentDetailData.publishedCategory.name }}</span>
                 <!-- LOCATION -->
@@ -99,14 +100,22 @@
                     <span class="error submit-error" data-ng-show="applyForm.$submitted && modal.ApplyService.ajaxError">
                         <i class="bhi-caution"></i> <span>{{ modal.ApplyService.ajaxError }}</span>
                     </span>
+                   <div class="eeoc-label">
+                        <span class="eeoc-label-header">
+                            <h3 style="margn-top:3%;text-decoration:underline">
+                                {{ ::modal.configuration.eeoc.header1 }}                               
+                            </h3>
+                        </span>
+                    </div>
                     <div class="eeoc-label">
                         <span class="eeoc-label-header">
                             <h4>
-                                {{ ::modal.configuration.eeoc.header1 }}
+                                {{ ::modal.configuration.eeoc.header2 }}
                                 <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-tooltip" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCTooltipText() }}"></i>
                             </h4>
                         </span>
                     </div>
+
                     <div class="form-field">
                         <div class="input">
                             <label for="eeoc-gender">{{ ::modal.configuration.eeoc.gender.label }}</label>
@@ -114,12 +123,20 @@
                                 <option data-ng-repeat="gender in ::modal.configuration.eeoc.gender.options" value="{{ gender.value }}">{{ gender.label }}</option>
                             </select>
                         </div>
+                    </div>        
+                    <div class="eeoc-label">
+                        <span class="eeoc-label-header">
+                            <h4>
+                                {{ ::modal.configuration.eeoc.header3 }}
+                             
+                            </h4>
+                        </span>
                     </div>
+
                     <div class="form-field">
                         <div class="input">
-                            <label for="eeoc-ethnicity" style="display: block;">
-                                {{ ::modal.configuration.eeoc.ethnicity.label }}
-                                <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCEthnicityTooltipText() }}"></i>
+                            <label for="eeoc-ethnicity" style="display: in-line-block;">
+                                {{ ::modal.configuration.eeoc.ethnicity.label }}                               
                             </label>
                             <!-- TODO Need to dynamically determine the size 
                             <select id="eeoc-ethnicity" data-ng-model="modal.ApplyService.form.ethnicity" size="7" required>
@@ -127,15 +144,20 @@
                             </select>
                             -->
                             <!-- ng-disabled="checked" to disable object once checked -->
-                             <input type="checkbox" data-ng-model="modal.ApplyService.form.ethnicity" id="eeoc-ethnicity" ng-true-value="'E1'" ng-false-value="'NONE'" style="width: 40px !important;"> Hispanic/Latino<br> 
-                        </div>                    
+                             <input type="checkbox" data-ng-model="modal.ApplyService.form.ethnicity" id="eeoc-ethnicity" ng-true-value="'E1'" ng-false-value="'NONE'" style="width: 20px !important;"> Hispanic/Latino  <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCEthnicityTooltipText() }}"></i>
+                        </div>              
+                    </div>
+                    <div class="eeoc-label">
+                        <span class="eeoc-label-header">
+                            <h4>
+                                {{ ::modal.configuration.eeoc.header4 }}
+                              <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCRaceTooltipText() }}"></i>
+                            </h4>
+                        </span>
                     </div>
                     <div class="form-field">
                         <div class="input">
-                            <label for="eeoc-race">
-                                {{ ::modal.configuration.eeoc.race.label }}
-                                <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCRaceTooltipText() }}"></i>
-                            </label>
+                            <label for="eeoc-race">{{ ::modal.configuration.eeoc.race.label }}</label>
                             <!-- TODO Need to dynamically determine the size -->
                             <select id="eeoc-race" data-ng-model="modal.ApplyService.form.race" size="7" ng-disabled="modal.ApplyService.form.ethnicity === 'E1'">
                                 <option data-ng-repeat="race in ::modal.configuration.eeoc.race.options" value="{{ race.value }}">{{ race.label }}</option>
@@ -144,15 +166,14 @@
                     </div>
                     <div class="eeoc-label">
                         <span class="eeoc-label-header">
-                            <h4>{{ ::modal.configuration.eeoc.header2 }}</h4>
+                            <h4>{{ ::modal.configuration.eeoc.header5 }}
+                             <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCTooltipText('veteran') }}"></i>
+                                </h4>
                         </span>
                     </div>
                     <div class="form-field">
                         <div class="input">
-                            <label for="eeoc-veteran">
-                                {{ ::modal.configuration.eeoc.veteran.label }}
-                                <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-purpose" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCTooltipText('veteran') }}"></i>
-                            </label>
+                            <label for="eeoc-veteran">{{ ::modal.configuration.eeoc.veteran.label }}</label>
                             <select id="eeoc-veteran" data-ng-model="modal.ApplyService.form.veteran" required>
                                 <option data-ng-repeat="veteran in ::modal.configuration.eeoc.veteran.options" value="{{ veteran.value }}">{{ veteran.label }}</option>
                             </select>
@@ -161,14 +182,16 @@
                     <div class="eeoc-label">
                         <span class="eeoc-label-header">
                             <h4>
-                                {{ ::modal.configuration.eeoc.header3 }}
+                                {{ ::modal.configuration.eeoc.header6 }}
                                 <i class="bhi-question" data-tooltips data-tooltip-class="eeoc-tooltip" data-tooltip-show-trigger="mouseenter" data-tooltip-hide-trigger="mouseleave" data-tooltip-side="right" data-tooltip-html="{{ ::modal.getEEOCTooltipText('disability') }}"></i>
                             </h4>
                         </span>
                     </div>
                     <div class="form-field">
                         <div class="input">
-                            <label for="eeoc-disability">{{ ::modal.configuration.eeoc.disability.label }}</label>
+                            <p style="margin-top:-5px;">Please review the attached document about "Voluntary Self-Identification of Disability" and then make your selection below: <a href="./VoluntarySelf-ID_CC-305_ENG_DropDown_JRF_QA_508c.pdf" target="_blank" style="color:blue; font-weight:normal;">Download document</a></p>
+                            
+                            <label for="eeoc-disability">{{ ::modal.configuration.eeoc.disability.label }}</label> 
                             <select id="eeoc-disability" data-ng-model="modal.ApplyService.form.disability" required>
                                 <option data-ng-repeat="disability in ::modal.configuration.eeoc.disability.options" value="{{ disability.value }}">{{ disability.label }}</option>
                             </select>
